@@ -1,0 +1,182 @@
+.big{
+	background: #fafafa;
+	width: 100%;
+	height: 1300px;
+	border-bottom:1px solid #f0f0f0;
+	margin-bottom: 60px;
+}
+
+.top{
+	height: 48px;
+	width: 100%;
+	border-bottom:1px solid #f0f0f0;
+}
+.top p:first-child{
+	float: left;
+	margin-left:14px ;
+	line-height: 48px;
+	font-size: 18px;
+	color: #000;
+	
+}
+.top p:last-child{
+	float: right;
+	margin-right:1px ;
+	line-height: 48px;
+	font-size: 18px;
+	color: #000;
+}
+.tou{
+	height: 156px;
+	width: 100%;
+	border-bottom:1px solid #f0f0f0;
+}
+.tou>img{
+	display: block;
+	margin-left: 20px;
+	float: left;
+}
+.tou h2{
+	font-size: 16px;
+	color: #000;
+	height: 25px;
+	width: 1000px;
+	padding-top: 14px;
+	float: left;
+}
+.tou .he{
+	height: 24px;
+	width: 1000px;
+	float: left;
+}
+.tou .he>img{
+	display: block;
+	float: left;
+	margin-right: 22px;
+}
+.tou .he>p{
+	font-size: 10px;
+	color:#000;float: left;
+}
+.tou .heb{
+	height: 16px;
+	width: 1000px;
+	float: left;
+}
+.tou .heb>img{
+	display: block;
+	float: left;
+	margin-right: 3px;
+}
+.tou .heb>p{
+	font-size: 11px;
+	margin: 1px 8px 0 0;
+	color:#000;float: left;
+}
+.l_banner{
+	height: 353px;
+	width: 880px;
+	overflow: hidden;
+}
+.swiper-slide img{
+	display: block;
+	height: 291px;
+	width: 164px;
+	margin-top: 10px;
+}
+.zi{
+	height: 44px;
+	line-height: 20px;
+	/*width: 1500px;*/
+	font-size: 14px;
+	color: #000;
+	margin-left:10px;
+	
+}
+.xiangguan{
+	/*width: ;*/
+	height: 28px;
+	margin:0 0 16px 15px;
+	font-size: 17px;
+	color: #666;
+	border-bottom:1px solid #f0f0f0;
+}
+.zanwu{
+	height: 55px;
+	font-size: 18px;
+	color: #666;
+	margin-left:11px;
+}
+.yonghu{
+	height: 27px;
+	margin-left: 15px;
+	font-size: 17px;
+	color: #666;
+	border-bottom:1px solid #f0f0f0;
+}
+.plun{
+	height:89px;
+	width:100%;
+	border-bottom:1px solid #f0f0f0;
+	box-sizing: border-box;
+	position: relative;
+}
+.plun>h2{
+	height: 22px;
+	width: 500px;
+	font-size: 15px;
+	color: #666;
+	text-indent: 15px;
+	padding-top: 14px;
+}
+.plun>p{
+	width: 500px;
+	height: 22px;
+	font-size: 14px;
+	color: #000;
+	text-indent: 15px;
+	
+}
+.plun>img{
+	position: absolute;
+	top: 15px;
+	right: 32px;
+}
+.plun .zan{
+	width:40px;
+	height: 25px;
+	position: absolute;
+	top: 60px;
+	right: 20px;
+	display: block;
+}
+.plun .zan img{
+	float: left;
+	display: block;
+	margin-top: 2px;
+}
+.plun .zan>p{
+	float: left;
+	font-size: 14px;
+	color: #666;
+	margin-right: 6px;
+}
+.foot{
+	height: 70px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	background: #FFFFFF;
+}
+.foot a{
+	display: block;
+	width: 265px;
+	height: 40px;
+	background: #32a5e7;
+	margin: 0 auto;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	margin-top: 25px;
+}

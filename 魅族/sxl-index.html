@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/sxl-index.css" />
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/cc-footer.css"/>
+		<script src="js/jquery-1.8.3.js"></script>
+		
+	</head>
+	<style>
+			body,
+			div,
+			ul,
+			li,
+			a,
+			img {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			a {
+				text-decoration: none;
+			}
+			
+			.wrapper {
+				position: relative;
+				margin:  auto;
+				width: 100%;
+				height: 480px;
+			}
+			
+			.banner {
+				width: 100%;
+				height: 480px;
+				overflow: hidden;
+			}
+			
+			.imgList {
+				width: 100%;
+				height: 480px;
+				z-index: 10;
+			}
+			.imgList li img{
+				margin-left: -200px;
+			}
+			.imgList li {
+				display: none;
+			}
+			
+			.imgList .imgOn {
+				display: inline;
+			}
+			
+			.bg {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 40px;
+				z-index: 20;
+				opacity: 0.4;
+				filter: alpha(opacity=40);
+				background: black;
+			}
+			
+			.infoList {
+				position: absolute;
+				left: 10px;
+				bottom: 10px;
+				z-index: 30;
+			}
+			
+			.infoList li {
+				display: none;
+			}
+			
+			.infoList .infoOn {
+				display: inline;
+				color: white;
+			}
+			
+			.indexList {
+				position: absolute;
+				right: 40%;
+				bottom: 20px;
+				z-index: 30;
+			}
+			
+			.indexList li {
+				float: left;
+				margin-right: 20px;
+				border: 1px solid #ccc;
+				cursor: pointer;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+			}
+			
+			.indexList .indexOn {
+				background: red;
+				font-weight: bold;
+				color: white;
+				}
+			.zuo a{color: #666;}
+			.tou{float: right;font-family: "微软雅黑";margin-right: 100px;margin-top: 20px;position:absolute;z-index: 500;
+			top: 0px;right: 0px;}
+			.tou li{display: inline-block;font-size: 14px;margin-right: 50px;cursor: pointer;}
+			.hezi{width: 100%;height: 150px;position: absolute;background: #fff;z-index: 1000;display: none;top: 230px;}
+			.hezi ol{position: absolute;left: 300px;top:30px;z-index: 2;text-align: center;font-size: 12px;color: #666;}
+			.hezi ol li{display: inline-block;float: left;margin-left:40px;}
+			.hezi ol li:hover{opacity: 0.5;}
+			.hezi img{width: 86px;height: 86px;}
+			@keyframes diyi {
+				0% {
+					opacity: 0;
+					transform: translateX(0px);
+				}
+				100% {
+					opacity: 1;
+					transform: translateX(-70px);
+				}
+			}
+			.hezi>div{display: none;}
+	</style>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/footer.js"></script>
+	<script>
+	window.onload = function(){
+		var Xiao = document.getElementById('content')
+		var oDa = Xiao.getElementsByTagName('li')
+//		alert(oDa.length)
+		for(var i = 1;i<oDa.length;i++){
+			oDa[i].onmouseover = function(){
+				this.style.transform = 'translateY(-5px)'
+				this.style.transition = '0.2s'
+				this.style.boxShadow = '0px 0px 10px #666'
+			
+}
+				
+			oDa[i].onmouseout = function(){
+//				alert(5)
+				this.style.transform = 'translateY(0px)'
+				this.style.boxShadow = '0px 0px 0px #666'
+			}
+		}
+		var huaw = document.getElementById('la');
+		var nav = huaw.getElementsByTagName('li')
+		var onav = document.getElementById('zuida');
+		var xuan = onav.getElementsByTagName('div');
+//		alert(xuan.length)
+//		alert(nav.length)
+		for(var i=0;i<nav.length;i++){
+			nav[i].index = i;
+			nav[i].onmouseover = function(){
+				for(var i=1;i<nav.length;i++){
+					xuan[i].style.display = 'none'
+					nav[i].style.color = '#000'
+				}
+				xuan[this.index].style.display = 'block';
+			}
+			
+		}
+		huaw.onmouseover = function(){
+			onav.style.display = 'block'
+		}
+		huaw.onmouseout = function(){
+			onav.style.display = 'none'
+		}
+		onav.onmouseover = function(){
+			onav.style.display = 'block'
+		}
+		onav.onmouseout = function(){
+			onav.style.display = 'none'
+		}
+		
+			var oli = document.getElementById('tou').children;
+			var tu = document.getElementById('hezi').children;
+			for(var i=0;i<5;i++){
+			oli[i].index=i;
+			oli[i].onmousemove=function(){
+//				alert(5)
+				$("#hezi").slideDown('100');
+				for(var i = 0; i < 5; i++) {
+					tu[i].style.animation = '';
+					tu[i].style.display='none';
+			    }
+				tu[this.index].style.display='block';
+				tu[this.index].style.animation = '2s forwards ease 1 diyi';
+			}
+		}
+			$("#hezi").hover(function(){
+				hezi.style.display = 'block';
+			},function(){
+				hezi.style.display = 'none'
+			})
+	}
+		
+	</script>
+	<body>
+		<img src="img/CnQOjVhGlOeAfHcnAAD0B4a_M-I594.jpg" class="tu">
+		<div class="toub">
+			<ul class="zuo">
+				<li><a href="guanwang.html">魅族官网</a></li>
+				<li><a href="sxl-index.html">魅族商城</a></li>
+				<li><a href="">Flyme</a></li>
+				<li><a href="zhuanmaidian.html">专卖店</a></li>
+				<li><a href="shequ.html">社区</a></li>
+				<li><a href="fuwu.html">服务</a></li>
+			</ul>
+			<ul class="you">
+				<li style="width: 95px;">我的收藏</li>
+				<li>我的订单</li>
+				<li><a href="denglu.html">登陆</a></li>
+				<li><a href="zhece.html">注册</a></li>
+				<img src="img/new.jpg" class="new">
+			</ul>
+		</div>
+		<div class="nav">
+			<img src="img/logo-new_294da7f.png" class="meizu">
+			<ul id="tou">
+				<li>PRO手机</li>
+				<li>魅蓝手机</li>
+				<li>MX手机</li>
+				<li>精选配件</li>
+				<li>智能硬件</li>
+			</ul>
+		</div>
+		<div class="hezi" id="hezi">
+			<div class="tut">
+				<ol>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"><br />MX 6</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png"><br />PRO 6S</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVeE2E-AAGZCABHUf4HwKyw117_126x126.png"><br />PRO 5</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png"><br />PRO 6Plus</a></li>
+				</ol>
+			</div>
+			<div class="tut">
+				<ol>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVfD9pWAS6VZAAutvljEfx8425_126x126.png"><br />PRO 6S</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVg-j0uAWlJIAAj4ScedJ9k483_126x126.png"><br />PRO 6Plus</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"><br />MX 6</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVeq0uGASgUFAAzQ2opb7qI013_126x126.png"><br />PRO 6</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"><br />PRO 5</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g1Pi2ANEg-AA9IpQ8-shg515_180x180.png"><br />MX 5</a></li>
+				</ol>
+			</div>
+			<div class="tut">
+				<ol>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g1Pi2ANEg-AA9IpQ8-shg515_180x180.png"><br />PRO 6S</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png"><br />PRO 6Plus</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"><br />PRO 5</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVeq0uGASgUFAAzQ2opb7qI013_126x126.png"><br />MX 6</a></li>
+				</ol>
+			</div>
+			<div class="tut">
+				<ol>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVgkHHWAUH85AAHOwfpsRUs585_126x126.png"><br />PRO 6Plus</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVhAAfGATHD5AA1jPCtyxxQ710_126x126.png"><br />魅蓝 X</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVfqPd-AEjICAAVBTlzLU4U578_126x126.png"><br />魅蓝 5</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVhAAfGATHD5AA1jPCtyxxQ710_126x126.png"><br />魅蓝 Max</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"><br />魅蓝 U20</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g1Pi2ANEg-AA9IpQ8-shg515_180x180.png"><br />MX 5</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g1Pi2ANEg-AA9IpQ8-shg515_180x180.png"><br />魅蓝 E</a></li>
+				</ol>
+			</div>
+			<div class="tut">
+				<ol>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"><br />HD 50</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"><br />Ep 51</a></li>
+					<li><a href="crl_MX6.html"><img src="img/CnQOjVg1PmWACg-wAARDEvU3cmg061_180x180.png"><br />EP 2x</a></li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"><br />GTa5</a></li>
+				</ol>
+			</div>
+		</div>
+			<div class="wrapper">
+			<!-- 最外层部分 -->
+			<div class="banner">
+				<!-- 轮播部分 -->
+				<ul class="imgList">
+					<!-- 图片部分 -->
+					<li class="imgOn">
+						<a href="#"><img src="img/CnQOjVhGlCmATYq8AARMoQkqZ0k065.jpg" height="480px"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/Cix_s1hFggWAd7O5AAGF02y4dDA102.jpg" height="480px"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/CnQOjVhBM1KAClifAAIIcp3uHrc640.jpg" height="480px"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/CnQOjVhH5TKAW822AAHndm-SKYw613.jpg" height="480px"></a>
+					</li>
+					<li>
+						<a href="#"><img src="img/CnQOjVhH5TKAW822AAHndm-SKYw613.jpg" height="480px"></a>
+					</li>
+				</ul>
+				<!-- 图片底部背景层部分-->
+				<ul class="indexList">
+					<!-- 图片右下角序号部分 -->
+					<li class="indexOn"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+			<div class="lie">
+				<ul id="la">
+					<li>全部商品分类</li>
+					<li>手机</li>
+					<li>智能硬件</li>
+					<li>耳机/音箱</li>
+					<li>路由器/移动电源</li>
+					<li>保护套/后盖/贴膜</li>
+					<li>数据线/电源适配器</li>
+					<li>周边配件</li>
+				</ul>
+				<div id="zuida">
+						<div class="shouji">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅蓝note5</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png"/>魅蓝3S</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png"/>魅族PRO6S</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gEM2uAKxqBAA9IpQ8-shg531_180x180.png"/>魅蓝PRO 6</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVgkHHWAUH85AAHOwfpsRUs585_126x126.png"/>魅蓝3</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/></a>魅蓝X</li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png"/>魅蓝U 10</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hIAV-AF6JoAAbqolcyaco006_180x180.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeE2E-AAGZCABHUf4HwKyw117_126x126.png"/>魅蓝U20</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅族Max</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVg-j0uAWlJIAAj4ScedJ9k483_126x126.png"/>魅蓝note3</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+						</div>
+						
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li><br />
+								<li><a href="crl_cup.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png"/>水杯</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hIAV-AF6JoAAbqolcyaco006_180x180.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeE2E-AAGZCABHUf4HwKyw117_126x126.png"/>魅蓝U20</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅族Max</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVg-j0uAWlJIAAj4ScedJ9k483_126x126.png"/>魅蓝note3</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+							<img src="img/Cix_s1hJIBKASQSzAACH0AUKlpg448.jpg" class="youbian">
+						</div>
+						
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfiK1qABWWMAAULoxmuYLI896_126x126.png"/>魅蓝U 10</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfqPd-AEjICAAVBTlzLU4U578_126x126.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝U20</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVgteMeAT2eeAAMI3IFWeh0860_180x180.png"/>魅族Max</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVg1MYeAVhrLAAVZ_mvZHa8580_180x180.png"/>魅蓝note3</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+							<img src="img/1467254278-66658.jpg" class="youbian">
+						</div>
+						
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png"/>魅蓝U 10</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hIAV-AF6JoAAbqolcyaco006_180x180.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeE2E-AAGZCABHUf4HwKyw117_126x126.png"/>魅蓝U20</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅族Max</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVg-j0uAWlJIAAj4ScedJ9k483_126x126.png"/>魅蓝note3</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+							<img src="img/Cix_s1f5nBOAZajEAAB5fOuc2Ho461.jpg" class="youbian">
+						</div>
+						
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a11.gif"/>魅族6 Plus</a></li>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/ljn_a13.gif">魅蓝U 10</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVgzwYuAA-yoAACVRHk1HFM524_126x126.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅蓝U20</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVhGcv-AVumMAAtuFSxnh1Q999_126x126.png"/>魅族Max</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVgqgsGAOkdCAAIlZk346XY331_180x180.png"/>魅蓝note3</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeq0uGASgUFAAzQ2opb7qI013_126x126.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+							<img src="img/Cix_s1hBF7eAKRVkAAB_WhOkxg8340.jpg" class="youbian">
+						</div>
+						
+						<div class="shouji">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅蓝note5</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅蓝3S</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png"/>魅族PRO6S</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeq0uGASgUFAAzQ2opb7qI013_126x126.png"/>魅蓝note5</a></li>
+							</ol>
+							<img src="img/CnQOjVggPj6AFhBYAABkZzHjVMk400.jpg" class="youbian">
+						</div>
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li>
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png"/>魅蓝U 10</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"/>魅族MX6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hIAV-AF6JoAAbqolcyaco006_180x180.png"/>魅蓝U</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeE2E-AAGZCABHUf4HwKyw117_126x126.png"/>魅蓝U20</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVeFtG6AY_FpAAKdyPUHRpQ152_180x180.png"/>魅族Max</a></li>
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVg-j0uAWlJIAAj4ScedJ9k483_126x126.png"/>魅蓝note3</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVfXbSeARD4tAAZYK3KJlH8271_180x180.png"/>魅蓝3E</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅族metal</a></li>
+							</ol>
+							<img src="img/CnQOjVggP82AE2jSAACqUVrIRAk332.jpg" class="youbian">
+						</div>
+						
+						<div class="shoujin">
+							<ol>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png"/>魅蓝note5</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png"/>魅蓝3S</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png"/>魅族PRO6S</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gEM2uAKxqBAA9IpQ8-shg531_180x180.png"/>魅蓝PRO 6</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/CnQOjVgkHHWAUH85AAHOwfpsRUs585_126x126.png"/>魅蓝3</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png"/>魅族6 Plus</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/ljn_a12.gif"/>魅蓝X</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png"/>魅蓝U 10</a></li><br />
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hHaFWAbhaLAAtuFSxnh1Q193_180x180.png"/>魅族MX6</a></li>
+								<li><a href="crl_MX6.html"><img src="img/Cix_s1hIAV-AF6JoAAbqolcyaco006_180x180.png"/>魅蓝U</a></li>
+							</ol>
+							<img src="img/Cix_s1hJIBKASQSzAACH0AUKlpg448.jpg" class="youbian">
+						</div>
+				</div>
+				
+				
+			</div>
+		<ul class="jian">
+			<li>
+				<ol> 
+					<li><img src="img/M.jpg"><br />M码通道</li>
+					<li><img src="img/huan.jpg"><br />以旧换新</li>
+					<li><img src="img/bao.jpg"><br />魅族意外保</li>
+					<li><img src="img/lie.jpg"><br />回购单查询</li>
+				</ol>
+			</li>
+			<li><a href="pinpairi.html"><img src="img/zy.jpg"></a></li>
+			<li><img src="img/ml.jpg"></li>
+			<li><img src="img/bz.jpg"></li>
+			<li><img src="img/jn.jpg"></li>
+		</ul>
+		<div class="don">
+			<div class="biao">
+				<p>热品推荐</p>
+				<img src="img/you.jpg" style="margin-right: 50px;">
+				<img src="img/zuo.jpg">
+			</div>
+			<div class="nei">
+				<ul>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1gEM2uAKxqBAA9IpQ8-shg531_180x180.png">
+						<br /> 魅族MX6
+						<br /> 6期免息 赠标准版移动电源
+						<p>￥1799</p>
+						</a>
+					</li>
+					<li><a href="crl_MX6.html"><img src="img/Cix_s1g1Pi2ANEg-AA9IpQ8-shg515_180x180.png">
+						<br /> 魅蓝 U10<br /> 6期免息 赠标准版移动电源
+						<p>￥1799</p>
+						</a>
+					</li>
+					<li><a href="crl_cup.html"><img src="img/Cix_s1gteCuAeGdrAAIRrbWmQSE733_180x180.png">
+						<br /> Moikit麦开智能水杯Cuptime2
+						<br /> 创意健康水杯 礼品礼物
+						<p>限时特惠￥299</p>
+						</a>
+					</li>
+					<li><img src="img/CnQOjVgteMeAT2eeAAMI3IFWeh0860_180x180.png">
+						<br /> Misfit Shine2智能手环 定制版 <br /> 彩色LED 无需充电 魅族定制版
+						<p>限时特惠￥399</p>
+					</li>
+					</li>
+					<li style="border-right: none;"><img src="img/Cix_s1g1PNqARyzZAAIpZM5_zYY287_180x180.png">
+						<br /> 铁三角ATH-C999
+						<br /> 经典平头塞
+						<p>￥199</p>
+					</li>
+				</ul>
+			</div>
+			<img src="img/tu1.jpg" style="margin-top: 40px;">
+		</div>
+		<div class="centent" id="content">
+			<div class="lan">
+				<p>手机</p>
+				<span>更多></span>
+			</div>
+			<ul class="ti">
+				<li style="padding-top: 0;"><img src="img/Cix_s1f7a36AAuhBAACoDELm3zU046.jpg"></li>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+			</ul>
+			<img src="img/CnQOjVhGEtWACtErAAFRyNp6gOA477.png" class="qu">
+			<!--第二行 -->
+			<div class="lan">
+				<p>手机</p>
+				<span>更多></span>
+			</div>
+			<ul class="ti">
+				<div style="padding-top: 0;"><img src="img/heide.jpg"></div>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+			</ul>
+			<img src="img/Cix_s1g-oo6AZsseAAFZK03kWfo056.jpg" class="qu">
+			<!--第三行 -->
+			<div class="lan">
+				<p>手机</p>
+				<span>更多></span>
+			</div>
+			<ul class="ti">
+				<div style="padding-top: 0;"><img src="img/shouhuan.jpg"></div>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+			</ul>
+			<!--第四行 -->
+			<div class="lan">
+				<p>手机</p>
+				<span>更多></span>
+			</div>
+			<ul class="ti">
+				<div style="padding-top: 0;"><img src="img/baohu.jpg"></div>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g-lYOAJzMqABY2I5awJck774_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1g9JbqAU7G9AAOSqVEq1nk348_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fDkdyAb0YGAEeDe0CxIV8257_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+				<li><img src="img/Cix_s1fNIqaAPDEJAAutvljEfx8334_126x126.png">
+					<br /> 魅蓝X<br />
+					<span>12月8日10：00限量首发</span>
+					<p>￥1699</p>
+				</li>
+			</ul>
+		</div>
+		<div class="cc-footer">
+			<footer>
+				<ul>
+					<li>
+						<img src="img/cc-footer/cc-footer-01.jpg" alt="" />
+						<p><span>7天</span>无理由退货</p>
+					</li>
+					<li>
+						<img src="img/cc-footer/cc-footer-02.jpg" alt="" />
+						<p><span>15天</span>换货保障</p>
+					</li>
+					<li>
+						<img src="img/cc-footer/cc-footer-03.jpg" alt="" />
+						<p><span>1年</span>免费保修</p>
+					</li>
+					<li>
+						<img src="img/cc-footer/cc-footer-04.jpg" alt="" />
+						<p><span>百城</span>速达</p>
+					</li>
+					<li>
+						<img src="img/cc-footer/cc-footer-05.jpg" alt="" />
+						<p><span>全场</span>包邮</p>
+					</li>
+					<li>
+						<img src="img/cc-footer/cc-footer-06.jpg" alt="" />
+						<p><span>2000多家</span>专卖店</p>
+					</li>
+				</ul>
+				<div class="cc-footer_center">
+					<ul>
+						<li>
+							<span><a href="javascript:;">帮助说明</a></span>
+							<p><a href="javascript:;">支付方式</a></p>
+							<p><a href="javascript:;">配送说明</a></p>
+							<p><a href="javascript:;">售后服务</a></p>
+							<p><a href="javascript:;">付款帮助</a></p>
+						</li>
+						<li>
+							<span><a href="javascript:;">Flyme</a></span>
+							<p><a href="javascript:;">开放平台</a></p>
+							<p><a href="javascript:;">固件下载</a></p>
+							<p><a href="javascript:;">软件商店</a></p>
+							<p><a href="javascript:;">查找手机</a></p>
+						</li>
+						<li>
+							<span><a href="javascript:;">关于我们</a></span>
+							<p><a href="javascript:;">关于魅族</a></p>
+							<p><a href="javascript:;">加入我们</a></p>
+							<p><a href="javascript:;">联系我们</a></p>
+							<p><a href="javascript:;">法律声明</a></p>
+						</li>
+						<li>
+							<span><a href="javascript:;">关注我们</a></span>
+							<p><a href="javascript:;">新浪微博</a></p>
+							<p><a href="javascript:;">腾讯微博</a></p>
+							<p><a href="javascript:;">QQ空间</a></p>
+							<p id="crl_wx"><a href="javascript:;" id="crl_wx_a">官方微信</a></p>
+						</li>
+						<li>
+							<p><a href="javascript:;">24小时全国服务热线</a></p>
+							<p><a href="javascript:;">400-788-3333</a></p>
+							<p><a href="javascript:;"><img src="img/cc-footer/ljn_a18.png" alt="" /><span>24小时在线客服</span></a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="cc-footer_top">
+					©2016 Meizu Telecom Equipment Co., Ltd. All rights reserved. 	<a href="javascript:;">备案号：粤ICP备13003602号-2</a><a href="javascript:;"> 经营许可证编号：粤B2-20130198 </a><a href="javascript:;">营业执照  </a> 
+					<a href="javascript:;" class="cc-footer_xx1"><i></i></a>
+					<a href="javascript:;" class="cc-footer_xx2"><i></i></a>
+					<a href="javascript:;" class="cc-footer_xx3"><i></i></a>
+					<a href="javascript:;" class="cc-footer_xx4"><i></i></a>
+				</div>
+			</footer>
+		</div>
+	</body>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			var curIndex = 0;
+			var autoChange = setInterval(function() {
+				if(curIndex < $(".imgList li").length - 1) {
+					curIndex++;
+				} else {
+					curIndex = 0;
+				} //调用变换处理函数 
+				changeTo(curIndex);
+			}, 2500);
+			$(".indexList").find("li").each(function(item) {
+				$(this).hover(function() {
+					clearInterval(autoChange);
+					changeTo(item);
+					curIndex = item;
+				}, function() {
+					autoChange = setInterval(function() {
+						if(curIndex < $(".imgList li").length - 1) {
+							curIndex++;
+						} else {
+							curIndex = 0;
+						}
+						//调用变换处理函数
+						changeTo(curIndex);
+					}, 2500);
+				});
+			});
+
+			function changeTo(num) {
+				$(".imgList").find("li").removeClass("imgOn").hide().eq(num).fadeIn().addClass("imgOn");
+				$(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+				$(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+			}
+		</script>
+</html>

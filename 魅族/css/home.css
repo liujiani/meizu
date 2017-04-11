@@ -1,0 +1,45 @@
+*{margin:0;padding:0; font-family: '微软雅黑';list-style: none;text-decoration: none;}
+body{width:100%;height:798px;  }
+  .top{width:100%;height:620px; background: url(../img/106316_medias_2016122_201612210403611.jpg);
+  background-repeat:no-repeat;background-size:100% 140%;   }
+  .nr{width:1000px;height: 34px;margin:0 auto;position: relative;top:15px;  }
+  .nr-l{width:169px;height:34px;border-right:1px solid #cccccc;float: left;   }
+   .nr-l img{position: relative;top:5px;}
+   .nr-c{float:left; margin-left: 68px;width: 480px;}
+   .nr-c ul li{float:left;position: relative;top:5px; }
+   .nr-c ul li a{font-size:16px;color:#fff;padding-right: 60px;   }
+   .nr-c ul li a:hover{color:#ebebeb; }
+   .nr-r{width:100px;float: right;height:16px;  }
+   .nr-r ul li{float:left;position: relative;top:5px; }
+   .nr-r ul li a{font-size:16px;color:#fff;padding-right: 15px;    }
+   .nr-r ul li a:hover{color:#ebebeb; }
+   .ss{width:600px;height:52px;margin:194px auto 0 auto;   }
+   .ss input{width:540px;height:50px;border:1px solid #818a91;font-size:16px;color: #cbcdcc;text-indent: 15px;cursor:pointer;border: none;  outline:none ; float: left;}
+   .ss img{width:58px;height:52px;vertical-align:middle;float: left;  }
+   .rm{width:488px;height:18px;margin:22px auto;}
+   .rm ul li{float:left; font-size:16px;padding-right:25px;  cursor:pointer; }
+    .rm ul li:hover{color:#ebebeb; }
+    .footer{width:1018px;height:140px;margin:10px auto;   }
+    .ft{width:1018px;height:120px;  }
+    .fb{width:500px;height:20px;margin:0 auto;   }
+    .rz{width: 114px;height:120px;float:left;  }
+    .gd{width:182px;height: 120px;float:left;margin-left:92px;   }
+    .cz{width:128px;height:120px;float:left;margin-left:74px;   }
+    .gy{width:182px;height: 120px;float:left;margin-left:80px; }
+    .sm{width:85px;height:120px;float:right;   }
+    .rz p{font-size:20px;}
+    .rz ul{margin-top:14px; }
+    .rz ul li a{font-size:14px;color: #000;padding-bottom: 10px; }
+    .gd p{font-size:15px;text-align: right;margin-top: 6px;  }
+    .gd ul{margin-top:14px; }
+    .gd ul li a{font-size:14px;color: #000;padding-bottom: 10px; }
+    .cz p{font-size:20px; }
+    .cz ul{margin-top:14px; }
+    .cz ul li a{font-size:14px;color: #000;padding-bottom: 10px; }
+    .gy p{font-size:15px;text-align: right;margin-top: 6px;  }
+    .gy ul{margin-top:14px; }
+    .gy ul li a{font-size:14px;color: #000;padding-bottom: 10px;  }
+    .sm img{width:84px;height:84px;margin-top: 6px;  }
+    .footer a:hover{text-decoration:underline;}
+    .fb p{font-size:12px; margin-top: 15px;}
+    .fb p img{vertical-align:middle;}

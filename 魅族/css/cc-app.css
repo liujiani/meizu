@@ -1,0 +1,12 @@
+.cc-app{position: relative;font-size: 0;}    
+.cc-app-pic{text-align: center;}      
+.cc-app-bj{background-color: #e5f0f8;}
+.cc-app-last{padding-bottom: 3%;}
+.cc-app-pic .mid{padding:4% 0;}
+.cc-app-pic .pic1{margin-top: 2%;width: 30%;}  
+.cc-app-pic .pic2,.cc-app-pic .pic7{padding-top: 1%;width: 18%;}   
+.cc-app-pic .pic3,.cc-app-pic .pic8{padding-top: 1%;width: 24%;}
+.cc-app-pic .pic4{padding-top: 3%;padding-bottom: 4%;}
+.cc-app-pic .pic6{width: 60%;}
+.cc-app-pic .pic7 {padding-bottom: 3%;}
+.cc-app-pic .auto{display: block;width: 100%;}
